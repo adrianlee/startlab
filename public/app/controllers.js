@@ -30,7 +30,7 @@ function MainCtrl($scope, $rootScope, $location) {
     return !!Parse.User.current();
   };
 
-  $rootScope.currentUser = Parse.User.current().toJSON();
+  $rootScope.currentUser = Parse.User.current();
 
   $scope.logout = function () {
     $scope.isLoggedIn = false;
