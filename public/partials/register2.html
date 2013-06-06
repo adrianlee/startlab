@@ -6,25 +6,25 @@
             <div class="control-group">
                 <label class="control-label" for="inputCName">Chinese Name</label>
                 <div class="controls">
-                    <input type="text" id="inputCName" placeholder=" ">
+                    <input type="text" id="inputCName" placeholder="" data-ng-model="profile.chinesename">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputEName">English Name</label>
                 <div class="controls">
-                    <input type="password" id="inputEName" placeholder=" ">
+                    <input type="text" id="inputEName" placeholder="" data-ng-model="profile.englishname">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputnum">Contact Number</label>
                 <div class="controls">
-                    <input type="text" id="inputnum" placeholder=" ">
+                    <input type="text" id="inputnum" placeholder="" data-ng-model="profile.phone">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="age">Age Range</label>
                 <div class="controls">
-                    <select>
+                    <select data-ng-model="profile.age">
                         <option>Below 10</option>
                         <option>10 to 19</option>
                         <option>20 to 29</option>
@@ -37,7 +37,7 @@
             <div class="control-group">
                 <label class="control-label" for="edu">Highest level of Education</label>
                 <div class="controls">
-                    <select>
+                    <select data-ng-model="profile.education">
                         <option>Below Form 5</option>
                         <option>Form 5</option>
                         <option>Form 6</option>
@@ -55,17 +55,17 @@
                 <label class="control-label" for="interest">Interested in</label>
                 <div class="controls">
                     <label class="checkbox inline">
-                        <input type="checkbox" id="Checkbox_music" value="music">Music</label>
+                        <input type="checkbox" id="Checkbox_music" value="music" data-ng-model="profile.interest_music">Music</label>
                     <label class="checkbox inline">
-                        <input type="checkbox" id="Checkbox_sport" value="sport">Sport</label>
+                        <input type="checkbox" id="Checkbox_sport" value="sport" data-ng-model="profile.interest_sport">Sport</label>
                     <label class="checkbox inline">
-                        <input type="checkbox" id="Checkbox_language" value="language">Language</label>
+                        <input type="checkbox" id="Checkbox_language" value="language" data-ng-model="profile.interest_language">Language</label>
                 </div>
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <button type="submit" class="btn btn-block btn-primary">Confirm</button>
-                    <button type="button" class="btn btn-block">Skip</button>
+                    <button type="submit" class="btn btn-block btn-primary" data-ng-click="submit(profile)">Confirm</button>
+                    <button type="button" class="btn btn-block" data-ng-click="skip()">Skip</button>
                 </div>
             </div>
             <br>

@@ -13,6 +13,7 @@ function MainCtrl($scope, $rootScope, $location) {
   $rootScope.$on('login', function() {
     $scope.isLoggedIn = true;
     $rootScope.currentUser = Parse.User.current();
+    $rootScope.name = Parse.User.current().toJSON().name;
     $scope.$digest();
     $rootScope.$digest();
   });
@@ -24,19 +25,22 @@ function MainCtrl($scope, $rootScope, $location) {
     $rootScope.$digest();
   });
 
-
   $rootScope.isLoggedIn = function() {
     $rootScope.currentUser = Parse.User.current();
     return !!Parse.User.current();
   };
-
-  $rootScope.currentUser = Parse.User.current();
 
   $scope.logout = function () {
     $scope.isLoggedIn = false;
     Parse.User.logOut();
     $rootScope.$emit('logout');
     $location.path('/');
+  }
+
+  if (!Parse.User.current()) {
+    $rootScope.currentUser = null;
+  } else {
+    $rootScope.currentUser = Parse.User.current().toJSON();
   }
 
   if(!$scope.$$phase) {
@@ -137,6 +141,20 @@ function ClassPageCtrl($scope, $location) {
 ClassPageCtrl.$inject = ['$scope', '$location'];
 
 function ClassCreateCtrl($scope, $rootScope, $location) {
+  var currentUser = Parse.User.current();
+  var register_done = false;
+
+  console.log(currentUser);
+
+  if (!currentUser.toJSON().register2) {
+    $location.path('/register2');
+
+    if(!$scope.$$phase) {
+      $scope.$digest();
+      $rootScope.$digest();
+    }
+  }
+
   console.log("Class Create");
   // mixpanel.track("Class Create");
 
@@ -218,7 +236,7 @@ function RegisterCtrl($scope, $rootScope, $location) {
 
         $rootScope.$emit('login');
 
-        $location.path('/learn');
+        $location.path('/register2');
 
         if(!$scope.$$phase) {
           $scope.$digest();
@@ -235,7 +253,41 @@ function RegisterCtrl($scope, $rootScope, $location) {
 RegisterCtrl.$inject = ['$scope', '$rootScope', '$location'];
 
 function Register2Ctrl($scope, $rootScope, $location) {
+  $scope.submit = function (profile) {
+    console.log(profile)
 
+    var user = Parse.User.current();
+
+    user.set("chinesename", profile.chinesename);
+    user.set("englishname", profile.englishname);
+    user.set("phone", profile.phone);
+    user.set("age", profile.age);
+    user.set("education", profile.education);
+    user.set("register2", true);
+
+    user.save(null, {
+      success: function () {
+        alert("yaya");
+        $location.path('/class/create');
+
+        if(!$scope.$$phase) {
+          $scope.$digest();
+          $rootScope.$digest();
+        }
+      },
+      error: function () {
+        alert("error")
+      }
+    })
+  }
+
+  $scope.skip = function () {
+    console.log("skip");
+    alert("Notice: You must fill out further information before registration or creation of a class.")
+
+    $location.path('/class')
+    $scope.$digest();
+  }
 }
 Register2Ctrl.$inject = ['$scope', '$rootScope', '$location'];
 
