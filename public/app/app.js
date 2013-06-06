@@ -13,5 +13,6 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
     $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: LoginCtrl});
     $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: RegisterCtrl});
     $routeProvider.when('/register2', {templateUrl: 'partials/register2.html', controller: Register2Ctrl});
+    $routeProvider.when('/profile', {templateUrl: 'partials/profile.html', controller: ProfileCtrl});
     $routeProvider.otherwise({redirectTo: '/home'});
   }]);

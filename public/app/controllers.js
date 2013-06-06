@@ -238,3 +238,9 @@ function Register2Ctrl($scope, $rootScope, $location) {
 
 }
 Register2Ctrl.$inject = ['$scope', '$rootScope', '$location'];
+
+
+function ProfileCtrl($scope, $rootScope, $location) {
+
+}
+ProfileCtrl.$inject = ['$scope', '$rootScope', '$location'];
