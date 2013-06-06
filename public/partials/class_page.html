@@ -1,0 +1,78 @@
+
+<div class="row">
+  <div class="col col-lg-8">
+    <div class="page-header">
+      <h2>{{class.name}} <small>Subtext for header</small></h2  >
+    </div>
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Class Information</div>
+      <p>{{class.introduction}}</p>
+
+      <!-- List group -->
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col col-lg-2">
+              <strong style="float: right;">Duration:</strong>
+            </div>
+            <div class="col col-lg-10">
+              {{class.duration}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col col-lg-2">
+              <strong style="float: right;">Created At:</strong>
+            </div>
+            <div class="col col-lg-10">
+              {{class.createdAt | date:'medium'}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col col-lg-2">
+              <strong style="float: right;">Category:</strong>
+            </div>
+            <div class="col col-lg-10">
+              {{class.category}}
+            </div>
+          </div>
+        </li>
+        <!--
+        <li class="list-group-item"><strong>Created At: </strong>{{class.createdAt}}</li>
+        <li class="list-group-item"><strong>Category: </strong>{{class.category}}</li>
+        -->
+      </ul>
+    </div>
+
+    <div class="page-header">
+      <h3>FAQ <small>answered by the instructor</small></h3>
+
+      <blockquote>
+        <p>Will your class include learning materials?</p>
+        <small>Howard Cheung <cite title="Source Title">10 mins ago</cite></small>
+      </blockquote>
+
+      <blockquote>
+        <p>Are there office hours after class?</p>
+        <small>Anonymous <cite title="Source Title">4 days ago</cite></small>
+      </blockquote>
+    </div>
+  </div>
+  <div class="col col-lg-4">
+    <div class="page-header">
+      <h2 data-ng-model="class.teacher">:D</h2>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">Teacher Profile</div>
+      asdasd
+    </div>
+  </div>
+</div>
+
+<div class="well">
+  {{class}}
+</div>

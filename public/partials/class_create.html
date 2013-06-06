@@ -1,0 +1,110 @@
+
+<!--
+    <form id="class-reg-form" data-validate="parsley">
+      <div class="page-header">
+        <h2>Class Details <small>Title & Description</small></h2>
+      </div>
+
+      <label for="classTitle">Class Name</label>
+      <input type="text" id="classTitle" name="classTitle" data-ng-model="class.title" data-required="true" placeholder="e.g. Build a Fixed Bike"/>
+
+      <label for="classDesc">Description</label>
+      <input type="text" id="classDesc" name="classDesc" data-ng-model="class.desc" data-trigger="change" data-required="true" data-type="email" placeholder="e.g. Introduction to assembly and tools required to building your first bike" />
+
+      <div class="page-header">
+        <h2>Syllabus <small>What will students learn?</small></h2>
+      </div>
+
+      <label for="syllabus">Syllabus (20 chars min, 200 max) :</label>
+      <textarea id="syllabus" name="syllabus" data-ng-model="class.syllabus"  data-trigger="keyup" data-rangelength="[20,200]"></textarea>
+    </form>
+
+    <br>
+    <button type="submit" class="btn btn-default btn-primary" data-ng-click="submit(class)">Submit</button>
+-->
+<div class="row">
+  <div class="col col-lg-8">
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label"><strong>Class Details</strong></label>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="categories">Categories</label>
+            <div class="controls">
+                <select data-ng-model="class.category">
+                    <option>-------</option>
+                    <option>Music</option>
+                    <option>Sport</option>
+                    <option>Lauguage</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputClassName">Class Name</label>
+            <div class="controls">
+                <input type="text" id="inputClassName" placeholder="" data-ng-model="class.name">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="intro">Brief Introduction</label>
+            <div class="controls">
+                <textarea rows="3" data-ng-model="class.introduction"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="class_size">Class Size</label>
+            <div class="controls">
+                <input type="text" id="class_size" placeholder="How many students" data-ng-model="class.size">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="location">Location</label>
+            <div class="controls">
+                <select data-ng-model="class.location">
+                    <option>-------</option>
+                    <option>---Hong Kong Island---</option>
+                    <option>Central and Western</option>
+                    <option>Wan Chai</option>
+                    <option>Eastern</option>
+                    <option>Southern</option>
+                    <option>---Kowloon---</option>
+                    <option>Yau Tsim Mong</option>
+                    <option>Sham Shui Po</option>
+                    <option>Kowloon City</option>
+                    <option>Wong Tai Sin</option>
+                    <option>Kwun Tong</option>
+                    <option>---New Territories---</option>
+                    <option>Kwai Tsing</option>
+                    <option>Tsuen Wan</option>
+                    <option>Tuen Mun</option>
+                    <option>Yuen Long</option>
+                    <option>North</option>
+                    <option>Tai Po</option>
+                    <option>Sha Tin</option>
+                    <option>Sai Kung</option>
+                    <option>Islands</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="teachinghr">Teaching Hour</label>
+            <div class="controls">
+                <select data-ng-model="class.duration">
+                    <option>--------</option>
+                    <option>1 hour</option>
+                    <option>2 hours</option>
+                    <option>3 hours</option>
+                    <option>4 hours</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary" data-ng-click="submit(class)">Confirm</button>
+                <button type="button" class="btn">Cancel</button>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>

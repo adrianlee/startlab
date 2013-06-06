@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col col-lg-3">
+    <blockquote>
+      <p>Subject / Categories</p>
+    </blockquote>
+    <div class="list-group">
+      <a href="#learn" class="list-group-item active">
+        All
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+      <a href="#learn/arts" class="list-group-item">
+        Arts 藝術
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+      <a href="#learn/education" class="list-group-item">
+        Education 教育
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+      <a href="#learn/music" class="list-group-item">
+        Music 音樂
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+      <a href="#learn/sports" class="list-group-item">
+        Sports / Outdoor 運動
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+      <a href="#learn/language" class="list-group-item">
+        Language 語言
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+      <a href="#learn/food" class="list-group-item">
+        Food 烹飪
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+      <a href="#learn/proskill" class="list-group-item">
+        Professional Skills 專業技能
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+      <a href="#learn/misc" class="list-group-item">
+        Miscellaneous 其他
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="col col-lg-9">
+    <div class="row">
+      <div class="col col-lg-6">
+        <div class="panel panel-learn panel-info">
+          <img height="55px" width="55px" src="http://www.gravatar.com/avatar/6438455cfde96c145cc9a53fd8657ef7?s=120" class="img-circle">
+          <div class="panel-heading panel-learn-header">
+            <h4 class="title">Conversational English</h4>
+            <h5 class="desc">University level with Howard</h5>
+          </div>
+          <p>
+            Tootsie roll sweet croissant gingerbread jelly-o sweet roll. Cotton candy powder tiramisu soufflé macaroon cupcake macaroon sugar plum tootsie roll. Brownie biscuit candy canes. Powder gummies fruitcake chocolate. Pie sesame snaps pastry chocolate bar chocolate jelly-o. Faworki jelly-o candy chocolate chocolate cake. Carrot cake jelly apple pie cupcake donut.
+          </p>
+          <button type="button" class="btn btn-default btn-success">Register</button>
+          <button type="button" class="btn btn-default btn-warning">More Info</button>
+
+        </div>
+      </div>
+      <div class="col col-lg-6">
+        <div class="panel panel-learn panel-info">
+          <img height="55px" width="55px" src="http://www.gravatar.com/avatar/e886a549dd39d48b3ebdb107fb705686?d=mm" class="img-circle">
+          <div class="panel-heading panel-learn-header">
+            <h4 class="title">Making Dumplings</h4>
+            <h5 class="desc" class="desc">Everyone welcome</h5>
+          </div>
+          <p>
+            Tootsie roll sweet croissant gingerbread jelly-o sweet roll. Cotton candy powder tiramisu soufflé macaroon cupcake macaroon sugar plum tootsie roll. Brownie biscuit candy canes. Powder gummies fruitcake chocolate. Pie sesame snaps pastry chocolate bar chocolate jelly-o. Faworki jelly-o candy chocolate chocolate cake. Carrot cake jelly apple pie cupcake donut.
+          </p>
+          <button type="button" class="btn btn-default btn-success">Register</button>
+          <button type="button" class="btn btn-default btn-warning">More Info</button>
+        </div>
+      </div>
+      <div class="col col-lg-6">
+        <div class="panel panel-learn panel-info">
+          <img height="55px" width="55px" src="http://cl.ly/PPxw/Screen%20Shot%202013-06-05%20at%203.36.44%20PM.png" class="img-circle">
+          <div class="panel-heading panel-learn-header">
+            <h4 class="title">StartLab</h4>
+            <h5 class="desc" class="desc">Fostering Hong Kong startups & ecosystem</h5>
+          </div>
+          <p>
+            StartLab Hong Kong: The First Startup Bootcamp for Tertiary Students & Graduates in Hong Kong! It is going to be held from 1st to 8th June 2012 hosted by Internet Society Hong Kong, Cyberport and Hong Kong Science and Technology Parks Corporation and supported by nearly 20 institutions and organisations now.
+          </p>
+          <button type="button" class="btn btn-default btn-success">Register</button>
+          <button type="button" class="btn btn-default btn-warning">More Info</button>
+        </div>
+      </div>
+
+
+      <div ng-repeat="class in classes | orderBy:'createdAt':true">
+        <div class="col col-lg-6">
+          <div class="panel panel-learn panel-info">
+          <img height="55px" width="55px" src="http://www.gravatar.com/avatar/e886a549dd39d48b3ebdb107fb705686?d=mm" class="img-circle">
+          <div class="panel-heading panel-learn-header">
+            <h4 class="title">{{class.name}}</h4>
+            <h5 class="desc" class="desc">{{class.desc}}</h5>
+          </div>
+          <p>
+            {{class.introduction}}
+          </p>
+          <a href="#class/{{class.objectId}}"><button type="button" class="btn btn-default btn-success">Register</button></a>
+          <a href="#class/{{class.objectId}}"><button type="button" class="btn btn-default btn-warning">More Info</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

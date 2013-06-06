@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>I Got Talent</title>
+
+  <!-- Parse -->
+  <script src="/assets/js/parse-1.2.8.min.js"></script>
+  <script>
+    Parse.initialize("p5hrATHPnfetTRkiYwaGzhwgH4cGPaZqXupRHW2h", "3xccn960O3UFioHwSpUzduKqvLo6shbwaT4FD2qa");
+  </script>
+
+  <!-- Angular -->
+  <script>
+    // include angular loader, which allows the files to load in any order
+    'use strict';(function(i){function d(c,a,e){return c[a]||(c[a]=e())}return d(d(i,"angular",Object),"module",function(){var c={};return function(a,e,f){e&&c.hasOwnProperty(a)&&(c[a]=null);return d(c,a,function(){function b(a,b,d){return function(){c[d||"push"]([a,b,arguments]);return g}}if(!e)throw Error("No module: "+a);var c=[],d=[],h=b("$injector","invoke"),g={_invokeQueue:c,_runBlocks:d,requires:e,name:a,provider:b("$provide","provider"),factory:b("$provide","factory"),service:b("$provide","service"),
+    value:b("$provide","value"),constant:b("$provide","constant","unshift"),filter:b("$filterProvider","register"),directive:b("$compileProvider","directive"),config:h,run:function(a){d.push(a);return this}};f&&h(f);return g})}})})(window);
+
+    // include a third-party async loader library
+    !function(a,b,c){function t(a,c){var e=b.createElement("script"),f=j;e.onload=e.onerror=e[o]=function(){e[m]&&!/^c|loade/.test(e[m])||f||(e.onload=e[o]=null,f=1,c())},e.async=1,e.src=a,d.insertBefore(e,d.firstChild)}function q(a,b){p(a,function(a){return!b(a)})}var d=b.getElementsByTagName("head")[0],e={},f={},g={},h={},i="string",j=!1,k="push",l="DOMContentLoaded",m="readyState",n="addEventListener",o="onreadystatechange",p=function(a,b){for(var c=0,d=a.length;c<d;++c)if(!b(a[c]))return j;return 1};!b[m]&&b[n]&&(b[n](l,function r(){b.removeEventListener(l,r,j),b[m]="complete"},j),b[m]="loading");var s=function(a,b,d){function o(){if(!--m){e[l]=1,j&&j();for(var a in g)p(a.split("|"),n)&&!q(g[a],n)&&(g[a]=[])}}function n(a){return a.call?a():e[a]}a=a[k]?a:[a];var i=b&&b.call,j=i?b:d,l=i?a.join(""):b,m=a.length;c(function(){q(a,function(a){h[a]?(l&&(f[l]=1),o()):(h[a]=1,l&&(f[l]=1),t(s.path?s.path+a+".js":a,o))})},0);return s};s.get=t,s.ready=function(a,b,c){a=a[k]?a:[a];var d=[];!q(a,function(a){e[a]||d[k](a)})&&p(a,function(a){return e[a]})?b():!function(a){g[a]=g[a]||[],g[a][k](b),c&&c(d)}(a.join("|"));return s};var u=a.$script;s.noConflict=function(){a.$script=u;return this},typeof module!="undefined"&&module.exports?module.exports=s:a.$script=s}(this,document,setTimeout)
+
+    // load all of the dependencies asynchronously.
+    $script([
+      'angular/angular.min.js',
+      'app/app.js',
+      'app/services.js',
+      'app/controllers.js',
+      'app/filters.js',
+      'app/directives.js'
+    ], function() {
+      angular.bootstrap(document, ['myApp']);
+    });
+  </script>
+
+  <!-- css -->
+
+  <style>
+    [ng-cloak] {
+      display: none;
+    }
+
+    html,
+    body {
+      height: 100%;
+      /* The html and body elements cannot have any padding or margin. */
+    }
+
+    /* Wrapper for page content to push down footer */
+    #wrap {
+      min-height: 100%;
+      height: auto !important;
+      height: 100%;
+      /* Negative indent footer by its height */
+      margin: 0 auto -60px;
+      /* Pad bottom by footer height */
+      padding: 0 0 60px;
+    }
+
+    /* Set the fixed height of the footer here */
+    #footer {
+      height: 60px;
+      background-color: #f5f5f5;
+    }
+
+    /* Lastly, apply responsive CSS fixes as necessary */
+    @media (max-width: 767px) {
+      #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    .container .credit {
+      margin: 20px 0;
+    }
+
+    body {
+      padding-top: 70px;
+    }
+
+    .starter-template {
+      padding: 40px 15px;
+      text-align: center;
+    }
+  </style>
+
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-cloak ng-controller="MainCtrl">
+  <div id="wrap">
+    <!-- Nav -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">I Got Talent</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav navbar-nav">
+            <!--<li class="active"><a href="#">Home</a></li>-->
+            <li><a href="#learn">Learn</a></li>
+            <li><a href="#teach">Teach</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <li data-ng-show="isLoggedIn"><a href="#class">My Classes</a></li>
+            <li data-ng-show="isLoggedIn"><a data-ng-click="logout()">Logout</a></li>
+            <li data-ng-hide="isLoggedIn"><a href="#login">Login</a></li>
+            <li data-ng-hide="isLoggedIn"><a href="#register">Register</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="container">
+      <div ng-view></div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted credit">
+        Created at
+        <a href="http://startlab.hk/">StartLab 2013</a> by
+        <a href="http://adrianlee.ca">Adrian Lee</a>,
+        Eddie Cheung,
+        Howard Cheung,
+        Karen Yeung,
+        <a href="//www.facebook.com/KennethLui">Kenneth Lui</a>,
+        May Yeung.
+        June 2013
+      </p>
+    </div>
+  </div>
+
+    <!--
+    var TestObject = Parse.Object.extend("TestObject");
+  var testObject = new TestObject();
+  testObject.save({foo: "bar"}, {
+    success: function(object) {
+      alert("yay! it worked");
+    }
+  });
+  -->
+
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/parsley/parsley.js"></script>
+    <script src="/assets/js/swipe/swipe.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+
+    <!--
+    <script type="text/javascript">
+      var analytics=analytics||[];(function(){var e=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group"],t=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)analytics[e[n]]=t(e[n])})(),analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};
+      analytics.load("1lp79dn");
+    </script>
+
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+    typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+    b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("823ece856cd22d387ea81cf9df35fca6");</script>
+    -->
+</body>
+</html>
