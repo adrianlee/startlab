@@ -14,12 +14,14 @@ function MainCtrl($scope, $rootScope, $location) {
     $scope.isLoggedIn = true;
     $rootScope.currentUser = Parse.User.current();
     $scope.$digest();
+    $rootScope.$digest();
   });
 
   $rootScope.$on('logout', function() {
     $scope.isLoggedIn = false;
     $rootScope.currentUser = Parse.User.current();
     $scope.$digest();
+    $rootScope.$digest();
   });
 
 
@@ -28,7 +30,7 @@ function MainCtrl($scope, $rootScope, $location) {
     return !!Parse.User.current();
   };
 
-  $rootScope.currentUser = Parse.User.current();
+  $rootScope.currentUser = Parse.User.current().toJSON();
 
   $scope.logout = function () {
     $scope.isLoggedIn = false;
@@ -120,7 +122,7 @@ function ClassPageCtrl($scope, $location) {
   query.find({
     success: function (result) {
       console.log(result);
-      $scope.class = result[0].toJSON();
+      $scope.class = result[0].toJSON() ;
 
       if(!$scope.$$phase) {
         $scope.$digest();
@@ -231,3 +233,8 @@ function RegisterCtrl($scope, $rootScope, $location) {
   }
 }
 RegisterCtrl.$inject = ['$scope', '$rootScope', '$location'];
+
+function Register2Ctrl($scope, $rootScope, $location) {
+
+}
+Register2Ctrl.$inject = ['$scope', '$rootScope', '$location'];

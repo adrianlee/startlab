@@ -109,7 +109,7 @@
             <li><a href="#teach">Teach</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
-            <li data-ng-show="isLoggedIn"><a href="#class">My Classes</a></li>
+            <li data-ng-show="isLoggedIn"><a href="#class">{{currentUser.name}}'s Classes</a></li>
             <li data-ng-show="isLoggedIn"><a data-ng-click="logout()">Logout</a></li>
             <li data-ng-hide="isLoggedIn"><a href="#login">Login</a></li>
             <li data-ng-hide="isLoggedIn"><a href="#register">Register</a></li>

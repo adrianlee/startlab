@@ -41,6 +41,12 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
     </div>
+    <blockquote>
+      <p>Subject / Categories</p>
+    </blockquote>
+    <div class="col col-lg-12">
+      <input ng-model="search" type="text" placeholder="Search">
+    </div>
   </div>
 
   <div class="col col-lg-9">
@@ -90,7 +96,7 @@
       </div>
 
 
-      <div ng-repeat="class in classes | orderBy:'createdAt':true">
+      <div ng-repeat="class in classes | orderBy:'createdAt':true | filter: search"  >
         <div class="col col-lg-6">
           <div class="panel panel-learn panel-info">
           <img height="55px" width="55px" src="http://www.gravatar.com/avatar/e886a549dd39d48b3ebdb107fb705686?d=mm" class="img-circle">
