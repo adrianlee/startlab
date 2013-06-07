@@ -1,1 +1,10 @@
-{{currentUser}}
+<ul class="list-unstyled">
+  <li class="lead"><b>English:</b> {{currentUser.englishname}}</li>
+  <li class="lead"><b>Chinese:</b> {{currentUser.chinesename}}</li>
+  <li class="lead"><b>Email:</b> {{currentUser.email}}</li>
+  <li class="lead"><b>Age:</b> {{currentUser.age}}</li>
+  <li class="lead"><b>Education:</b> {{currentUser.education}}</li>
+  <li class="lead"><b>Contact Number:</b> {{currentUser.phone}}</li>
+  <li class="lead"><b>ID:</b> {{currentUser.objectId}}</li>
+  <li class="lead"><b>Member</b> Since: {{currentUser.createdAt | date:'mediumDate'}}</li>
+</ul>

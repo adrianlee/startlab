@@ -105,14 +105,14 @@
         <div class="nav-collapse collapse">
           <ul class="nav navbar-nav">
             <!--<li class="active"><a href="#">Home</a></li>-->
-            <li><a href="#learn">Learn</a></li>
-            <li><a href="#teach">Teach</a></li>
+            <li><a href="#/learn">Learn</a></li>
+            <li><a href="#/teach">Teach</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
-            <li data-ng-show="isLoggedIn"><a href="#class">{{currentUser.name}}'s Classes</a></li>
+            <li data-ng-show="isLoggedIn"><a href="#/class">{{currentUser.name}}'s Classes</a></li>
             <li data-ng-show="isLoggedIn"><a data-ng-click="logout()">Logout</a></li>
-            <li data-ng-hide="isLoggedIn"><a href="#login">Login</a></li>
-            <li data-ng-hide="isLoggedIn"><a href="#register">Register</a></li>
+            <li data-ng-hide="isLoggedIn"><a href="#/login">Login</a></li>
+            <li data-ng-hide="isLoggedIn"><a href="#/register">Register</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -143,6 +143,7 @@
     <script src="/assets/js/jquery.js"></script>
     <script src="/assets/js/parsley/parsley.js"></script>
     <script src="/assets/js/swipe/swipe.js"></script>
+    <script src="/assets/js/jquery.masonry.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
 
     <!--

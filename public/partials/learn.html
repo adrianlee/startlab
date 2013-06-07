@@ -4,39 +4,40 @@
       <p>Subject / Categories</p>
     </blockquote>
     <div class="list-group">
-      <a href="#learn" class="list-group-item active">
+      <a href="#/learn" class="list-group-item active">
         All
         <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="badge" id="learn_count">0</span>
       </a>
-      <a href="#learn/arts" class="list-group-item">
+      <a href="#/learn/arts" class="list-group-item">
         Arts 藝術
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-      <a href="#learn/education" class="list-group-item">
+      <a href="#/learn/education" class="list-group-item">
         Education 教育
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-      <a href="#learn/music" class="list-group-item">
+      <a href="#/learn/music" class="list-group-item">
         Music 音樂
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-      <a href="#learn/sports" class="list-group-item">
+      <a href="#/learn/sports" class="list-group-item">
         Sports / Outdoor 運動
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-      <a href="#learn/language" class="list-group-item">
+      <a href="#/learn/language" class="list-group-item">
         Language 語言
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-      <a href="#learn/food" class="list-group-item">
+      <a href="#/learn/food" class="list-group-item">
         Food 烹飪
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-      <a href="#learn/proskill" class="list-group-item">
+      <a href="#/learn/proskill" class="list-group-item">
         Professional Skills 專業技能
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-      <a href="#learn/misc" class="list-group-item">
+      <a href="#/learn/misc" class="list-group-item">
         Miscellaneous 其他
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
@@ -47,10 +48,12 @@
     <div class="col col-lg-12">
       <input ng-model="search" type="text" placeholder="Search">
     </div>
+    <br/>
   </div>
 
   <div class="col col-lg-9">
-    <div class="row">
+    <div class="row" id="block_show">
+      <!--
       <div class="col col-lg-6">
         <div class="panel panel-learn panel-info">
           <img height="55px" width="55px" src="http://www.gravatar.com/avatar/6438455cfde96c145cc9a53fd8657ef7?s=120" class="img-circle">
@@ -95,20 +98,24 @@
         </div>
       </div>
 
+      -->
 
-      <div ng-repeat="class in classes | orderBy:'createdAt':true | filter: search"  >
+      <div ng-repeat="class in classes | orderBy:'createdAt':true | filter: search">
         <div class="col col-lg-6">
           <div class="panel panel-learn panel-info">
-          <img height="55px" width="55px" src="http://www.gravatar.com/avatar/e886a549dd39d48b3ebdb107fb705686?d=mm" class="img-circle">
-          <div class="panel-heading panel-learn-header">
-            <h4 class="title">{{class.name}}</h4>
-            <h5 class="desc" class="desc">{{class.desc}}</h5>
+            <div class="learn_buttons">
+              <!-- <a href="#/class/{{class.objectId}}"><button type="button" class="btn btn-default btn-success">Register</button></a> -->
+              <a href="#/class/{{class.objectId}}"><button type="button" class="btn btn-default btn-success">More Info</button></a>
+            </div>
+            <img height="55px" width="55px" src="http://www.gravatar.com/avatar/e886a549dd39d48b3ebdb107fb705686?d=mm" class="img-circle">
+            <div class="panel-heading panel-learn-header">
+              <h4 class="title">{{class.name}}</h4>
+              <h5 class="desc" class="desc">by {{class.teachername}}</h5>
+            </div>
+            <p class="ellip">
+              {{class.introduction}}
+            </p>
           </div>
-          <p>
-            {{class.introduction}}
-          </p>
-          <a href="#class/{{class.objectId}}"><button type="button" class="btn btn-default btn-success">Register</button></a>
-          <a href="#class/{{class.objectId}}"><button type="button" class="btn btn-default btn-warning">More Info</button></a>
         </div>
       </div>
     </div>

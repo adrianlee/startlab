@@ -1,6 +1,7 @@
 .panel-learn {
-  overflow: hidden;
   text-overflow: ellipsis;
+  overflow: hidden;
+  height: 200px;
 }
 
 .panel-learn-header {
@@ -23,7 +24,10 @@
   margin-top: -20px;
 }
 
-
+.ellip {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 
 #mySwipe div b {
   display:block;
@@ -38,4 +42,13 @@
   border-radius: 3px;
   border: 1px solid;
   border-color: #E5E5E5 #D3D3D3 #B9C1C6;
+}
+
+.learn_buttons {
+  /*display: none;*/
+  position: absolute;
+  right: 0px;
+  /*bottom: 60px;*/
+  top: 0px;
+  margin: 20px 35px;
 }

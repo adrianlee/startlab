@@ -61,12 +61,22 @@ function LearnCtrl($scope, $location) {
 
   // console.log($location.path());
 
+  $(function(){
+    $('.panel-learn').hover(function () {
+      $(this).find(".learn_buttons").show();
+    });
+    $('.learn_buttons').hide();
+  });
+
+
   var Classes = Parse.Object.extend("Classes");
   var query = new Parse.Query(Classes);
 
   query.find({
     success: function(results) {
       console.log("Successfully retrieved " + results.length + " courses.");
+
+      $('#learn_count').html(results.length);
 
       var jsonArray = [];
 
@@ -108,6 +118,33 @@ function ClassCtrl($scope, $location) {
   if(!$scope.$$phase) {
     $scope.$digest();
   }
+
+  var Classes = Parse.Object.extend("Classes");
+  var query = new Parse.Query(Classes);
+
+  query.equalTo("teacher", currentUser);
+
+  query.find({
+    success: function(results) {
+      console.log("Successfully retrieved " + results.length + " courses.");
+
+      $('#learn_count').html(results.length);
+
+      var jsonArray = [];
+
+      for (var i = 0; i < results.length; i++) {
+        console.log(results[i]);
+        jsonArray.push(results[i].toJSON());
+      }
+
+      $scope.classes = jsonArray;
+
+      $scope.$digest();
+    },
+    error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+    }
+  });
 }
 
 ClassCtrl.$inject = ['$scope', '$location'];
@@ -161,6 +198,11 @@ function ClassCreateCtrl($scope, $rootScope, $location) {
   $scope.submit = function (newClass) {
     var Classes = Parse.Object.extend("Classes");
     var classes = new Classes();
+
+    newClass.teacher = Parse.User.current();
+    newClass.teachername = Parse.User.current().toJSON().name;
+
+    console.log(newClass);
 
     classes.save(newClass, {
       success: function (savedClass) {
