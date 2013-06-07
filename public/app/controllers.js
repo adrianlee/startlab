@@ -207,10 +207,13 @@ function ClassPageCtrl($scope, $location) {
             console.log(person[0].toJSON());
             $scope.teacher = person[0].toJSON();
 
-            if (currentUser.toJSON().objectId == person[0].toJSON().objectId) {
-              $('#registerbutton').addClass("disabled");
-              $('#registerbutton').html("You're the teacher!");
+            if (currentUser) {
+              if (currentUser.toJSON().objectId == person[0].toJSON().objectId) {
+                $('#registerbutton').addClass("disabled");
+                $('#registerbutton').html("You're the teacher!");
+              }
             }
+
 
             $scope.profile_image = "http://www.gravatar.com/avatar/" + md5(person[0].toJSON().email.toLowerCase().trim()) + "?d=mm";
 
@@ -230,11 +233,14 @@ function ClassPageCtrl($scope, $location) {
     }
   });
 
-  var omg = currentUser.toJSON().registered;
+  if (currentUser) {
+    var omg = currentUser.toJSON().registered;
 
-  if ($.inArray($location.path().split('/')[2], omg) > -1) {
-    $('#registerbutton').addClass("disabled");
-    $('#registerbutton').html("Registered");
+    if ($.inArray($location.path().split('/')[2], omg) > -1) {
+      $('#registerbutton').addClass("disabled");
+      $('#registerbutton').html("Registered");
+    }
+
   }
 
 
