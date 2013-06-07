@@ -245,6 +245,20 @@ function ClassPageCtrl($scope, $location) {
 
 
   $scope.register = function () {
+    var currentUser = Parse.User.current();
+
+    if (!currentUser) {
+      $location.path('/register');
+
+      if(!$scope.$$phase) {
+        $scope.$digest();
+        $rootScope.$digest();
+      }
+
+      return
+    }
+
+
     var sure = confirm("Please confirm registration.");
 
     console.log(sure);
