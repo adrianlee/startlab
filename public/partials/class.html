@@ -14,7 +14,7 @@
   </div>
   <div class="col col-lg-9">
     <div class="list-group">
-      <h2>我開辦的課程 <button class="btn btn-success">開辦您第一個課程</button></h2>
+      <h2>我開辦的課程 <a href="#/class/create"><button class="btn btn-success">開辦您第一個課程</button></a></h2>
       <p ng-hide="classes">你暫時沒有開辦課程</p>
       <div ng-repeat="class in classes | orderBy:'createdAt':true | filter: search"  >
         <a href="#/class/{{class.objectId}}" class="list-group-item">
@@ -23,7 +23,7 @@
         </a>
       </div>
       <br>
-      <h2>已註冊的課程 <button class="btn btn-success">更 多</button></h2>
+      <h2>已註冊的課程 <a href="#/learn"><button class="btn btn-success">更 多</button></a></h2>
       <p ng-hide="classes2">你暫時沒有註冊課程</p>
       <div ng-repeat="class in classes2 | orderBy:'createdAt':true | filter: search"  >
         <a href="#/class/{{class.objectId}}" class="list-group-item">
