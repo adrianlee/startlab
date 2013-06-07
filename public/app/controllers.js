@@ -196,7 +196,8 @@ function ClassPageCtrl($scope, $location) {
     var sure = confirm("Please confirm registration.");
 
     if (sure) {
-      alert("yay!");
+      $('#registerbutton').addClass("disabled");
+      $('#registerbutton').html("Registered");
     }
   }
 }
