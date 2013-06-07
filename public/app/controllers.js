@@ -166,6 +166,23 @@ function ClassPageCtrl($scope, $location) {
       console.log(result);
       $scope.class = result[0].toJSON();
 
+      if ($scope.class) {
+        var query = new Parse.Query(Parse.User);
+        query.equalTo("objectId", $scope.class.teacher.objectId);
+        query.find({
+          success: function(person) {
+            console.log(person[0].toJSON());
+            $scope.teacher = person[0].toJSON();
+
+            $scope.profile_image = "http://www.gravatar.com/avatar/" + md5(person[0].toJSON().email.toLowerCase().trim()) + "?d=mm";
+
+            if(!$scope.$$phase) {
+              $scope.$digest();
+            }
+          }
+        });
+      }
+
       if(!$scope.$$phase) {
         $scope.$digest();
       }
@@ -371,3 +388,8 @@ function ProfileCtrl($scope, $rootScope, $location) {
 
 }
 ProfileCtrl.$inject = ['$scope', '$rootScope', '$location'];
+
+function ContactCtrl($scope, $rootScope, $location) {
+
+}
+ContactCtrl.$inject = ['$scope', '$rootScope', '$location'];

@@ -1,8 +1,8 @@
+    <div class="page-header">
+      <h2>{{class.name}} <small>by {{teacher.name}}</small></h2>
+    </div>
 <div class="row">
   <div class="col col-lg-8">
-    <div class="page-header">
-      <h2>{{class.name}} <small>Subtext for header</small></h2  >
-    </div>
     <div class="panel panel-primary">
       <!-- Default panel contents -->
       <div class="panel-heading">Class Information</div>
@@ -58,7 +58,6 @@
     </div>
 
     <button class="btn btn-success btn-large btn-block">Register</button>
-    <button class="btn btn-success btn-block" disabled="disabled">Ask instructor a question</button>
 
     <div class="page-header">
       <h3>FAQ <small>answered by the instructor</small></h3>
@@ -75,13 +74,48 @@
     </div>
   </div>
   <div class="col col-lg-4">
-    <div class="page-header">
-      <h2 data-ng-model="class.teacher">:D</h2>
-    </div>
     <div class="panel panel-info">
       <div class="panel-heading">Teacher Profile</div>
-      asdasd
+      <p><img height="100px" ng-src="{{profile_image}}"></img></p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col col-lg-5">
+              <strong>Name:</strong>
+            </div>
+            <div class="col col-lg-7">
+              {{teacher.name}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col col-lg-5">
+              <strong>Age:</strong>
+            </div>
+            <div class="col col-lg-7">
+              {{teacher.age}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col col-lg-5">
+              <strong>Member Since:</strong>
+            </div>
+            <div class="col col-lg-7">
+              {{class.createdAt | date:'mediumDate'}}
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">Ask teacher question about this class</div>
+      <p><input type="text" class="" placeholder="Are there office hours after class?"></input></p>
+      <button class="btn btn-info btn-block">Submit Question</button>
+    </div>
+
   </div>
 </div>
 

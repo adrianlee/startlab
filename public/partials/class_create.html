@@ -51,16 +51,15 @@
             <label class="control-label" for="intro">Brief Introduction</label>
 
             <div class="controls">
+                <!--
                 <div id="wysihtml5-toolbar" style="display: none;">
                   <a data-wysihtml5-command="bold">bold</a>
                   <a data-wysihtml5-command="italic">italic</a>
 
-                  <!-- Some wysihtml5 commands require extra parameters -->
                   <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a>
                   <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a>
                   <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a>
 
-                  <!-- Some wysihtml5 commands like 'createLink' require extra paramaters specified by the user (eg. href) -->
                   <a data-wysihtml5-command="createLink">insert link</a>
                   <div data-wysihtml5-dialog="createLink" style="display: none;">
                     <label>
@@ -79,6 +78,8 @@
                   parserRules:  wysihtml5ParserRules // defined in parser rules set
                 });
                 </script>
+                -->
+                <textarea data-ng-model="class.introduction" data-required="true"></textarea>
             </div>
         </div>
         <div class="control-group">
@@ -91,7 +92,8 @@
             <label class="control-label" for="location">Location</label>
             <div class="controls">
                 <select data-ng-model="class.location" data-required="true" >
-                    <option disabled>---Hong Kong Island---</option>
+                    <option value="" disabled>Please Choose</option>
+                    <option>---Hong Kong Island---</option>
                     <option>Central and Western</option>
                     <option>Wan Chai</option>
                     <option>Eastern</option>
@@ -136,6 +138,7 @@
                 <button type="button" class="btn">Cancel</button>
             </div>
         </div>
+        <br>
     </form>
   </div>
 </div>
