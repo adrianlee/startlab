@@ -232,9 +232,6 @@ function ClassPageCtrl($scope, $location) {
 
   var omg = currentUser.toJSON().registered;
 
-  console.log(omg);
-  console.log(omg.indexOf("Qe7A84mA31"));
-
   if ($.inArray("Qe7A84mA31", omg) > -1) {
     $('#registerbutton').addClass("disabled");
     $('#registerbutton').html("Registered");
