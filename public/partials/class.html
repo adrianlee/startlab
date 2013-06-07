@@ -62,7 +62,7 @@
       </a>
       -->
       <h2>我開辦的課程</h2>
-      <p ng-hide="classes2">你暫時沒有開辦課程</p>
+      <p ng-hide="classes">你暫時沒有開辦課程</p>
       <div ng-repeat="class in classes | orderBy:'createdAt':true | filter: search"  >
         <a href="#/class/{{class.objectId}}" class="list-group-item">
           <h4 class="list-group-item-heading">{{class.name}}</h4>
