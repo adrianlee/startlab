@@ -232,7 +232,7 @@ function ClassPageCtrl($scope, $location) {
 
   var omg = currentUser.toJSON().registered;
 
-  if ($.inArray("Qe7A84mA31", omg) > -1) {
+  if ($.inArray($location.path().split('/')[2], omg) > -1) {
     $('#registerbutton').addClass("disabled");
     $('#registerbutton').html("Registered");
   }
