@@ -46,7 +46,7 @@ function MainCtrl($scope, $rootScope, $location) {
 
   $scope.close_nav = function () {
     console.log("ASDADADDSD");
-    $('.nav-collapse').toggle();
+    // $('.nav-collapse').toggle();
   }
 
   if(!$scope.$$phase) {
