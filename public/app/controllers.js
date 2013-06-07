@@ -237,7 +237,7 @@ function ClassPageCtrl($scope, $location) {
   console.log(omg);
   console.log(omg.indexOf("Qe7A84mA31"));
 
-  if (omg.indexOf("Qe7A84mA31") > -1) {
+  if ($.inArray("Qe7A84mA31", omg) > -1) {
     $('#registerbutton').addClass("disabled");
     $('#registerbutton').html("Registered");
   }
