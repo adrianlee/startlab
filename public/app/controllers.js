@@ -44,6 +44,11 @@ function MainCtrl($scope, $rootScope, $location) {
     $rootScope.currentUser = Parse.User.current().toJSON();
   }
 
+  $scope.close_nav = function () {
+    console.log("ASDADADDSD");
+    $('.nav-collapse').toggle();
+  }
+
   if(!$scope.$$phase) {
     $scope.$digest();
     $rootScope.$digest();
