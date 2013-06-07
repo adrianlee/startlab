@@ -198,6 +198,11 @@ function ClassPageCtrl($scope, $location) {
     if (sure) {
       $('#registerbutton').addClass("disabled");
       $('#registerbutton').html("Registered");
+
+      var currentUser = Parse.User.current();
+
+      currentUser.toJSON().registered
+
     }
   }
 }
