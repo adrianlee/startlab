@@ -18,8 +18,8 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')), { maxAge: 900000 });
-  app.use(express.static(path.join(__dirname, 'components')), { maxAge: 900000 });
+  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, 'components')));
 });
 
 app.configure('development', function(){
@@ -27,7 +27,7 @@ app.configure('development', function(){
 });
 
 app.get('/', function (req, res) {
-  res.sendfile(path.join(__dirname, 'public', 'index.html'), { maxAge: 900000 });
+  res.sendfile(path.join(__dirname, 'public', 'index.html'));
 });
 
 http.createServer(app).listen(app.get('port'), function(){
