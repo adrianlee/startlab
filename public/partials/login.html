@@ -1,22 +1,22 @@
-<h3>Please Login</h3>
+<h3>登入</h3>
 <br>
 <div class="row">
   <div class="col col-lg-5">
     <form id="login-form" class="form-horizontal" data-validate="parsley">
       <div class="row">
-        <label for="inputEmail" class="col col-lg-2 control-label">Email</label>
+        <label for="inputEmail" class="col col-lg-2 control-label">電 郵</label>
         <div class="col col-lg-10">
           <input type="text" id="inputEmail" placeholder="Email" data-ng-model="user.email" data-trigger="change" data-required="true" data-type="email">
         </div>
       </div>
       <div class="row">
-        <label for="" class="col col-lg-2 control-label">Password</label>
+        <label for="" class="col col-lg-2 control-label">密 碼</label>
         <div class="col col-lg-10">
           <input type="password" id="inputPassword" placeholder="Password" data-ng-model="user.password" data-required="true" data-minlength="6">
           <br>
         </div>
         <div class="col col-lg-10 col-offset-2">
-          <button type="submit" class="btn btn-default btn-primary" data-ng-click="submit(user)">Login</button>
+          <button type="submit" class="btn btn-default btn-primary" data-ng-click="submit(user)">登入</button>
           <!-- <button type="submit" class="btn btn-default btn-primary" data-ng-click="forgot(user.email)">Reset Password</button> -->
         </div>
       </div>
@@ -26,13 +26,13 @@
 
 <br>
 
-<h3>Reset Password</h3>
+<h3>重罝密碼</h3>
 <br>
 <div class="row">
   <div class="col col-lg-5">
     <form id="login-form" class="form-horizontal" data-validate="parsley">
       <div class="row">
-        <label for="inputEmail" class="col col-lg-2 control-label">Email</label>
+        <label for="inputEmail" class="col col-lg-2 control-label">電 郵</label>
         <div class="col col-lg-10">
           <input type="text" id="inputEmail" placeholder="Email" data-ng-model="email.email">
         </div>
@@ -40,7 +40,7 @@
       <div class="row">
         <div class="col col-lg-10 col-offset-2">
           <!-- <button type="submit" class="btn btn-default btn-primary" data-ng-click="submit(user)">Login</button> -->
-          <button type="submit" class="btn btn-default btn-primary" data-ng-click="forgot(email)">Reset Password</button>
+          <button type="submit" class="btn btn-default btn-primary" data-ng-click="forgot(email)">重罝密碼</button>
           <!-- <button type="submit" class="btn btn-default btn-primary" data-ng-click="forgot(user.email)">Reset Password</button> -->
         </div>
       </div>

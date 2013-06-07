@@ -23,32 +23,32 @@
 -->
 <div class="row">
   <div class="col col-lg-8">
-    <h2>Class Details</h2>
+    <h2>課程資料</h2>
     <form id="class_form" class="form-horizontal" data-validate="parsley">
         <div class="control-group">
-            <label class="control-label" for="categories">Categories</label>
+            <label class="control-label" for="categories">種類</label>
             <div class="controls">
                 <select data-ng-model="class.category" data-required="true">
                     <option value="" disabled>Please Choose</option>
-                    <option value="arts">Arts</option>
-                    <option value="education">Education</option>
-                    <option value="music">Music</option>
-                    <option value="sports">Sports / Outdoor</option>
-                    <option value="language">Language</option>
-                    <option value="food">Food</option>
-                    <option value="professional">Professional Skills</option>
-                    <option value="misc">Miscellaneous</option>
+                    <option value="arts">Arts 藝術</option>
+                    <option value="education">Education 教育</option>
+                    <option value="music">Music 音樂</option>
+                    <option value="sports">Sports / Outdoor 運動</option>
+                    <option value="language">Language 語言</option>
+                    <option value="food">Cooking 烹飪</option>
+                    <option value="professional">Professional Skills 專業技能</option>
+                    <option value="misc">Miscellaneous 其他</option>
                 </select>
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="inputClassName">Class Name</label>
+            <label class="control-label" for="inputClassName">課程名稱</label>
             <div class="controls">
                 <input type="text" id="inputClassName" placeholder="" data-ng-model="class.name" data-required="true" >
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="intro">Brief Introduction</label>
+            <label class="control-label" for="intro">課程簡介</label>
 
             <div class="controls">
                 <!--
@@ -83,42 +83,42 @@
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="class_size">Class Size</label>
+            <label class="control-label" for="class_size">學生人數</label>
             <div class="controls">
                 <input type="text" id="class_size" placeholder="How many students" data-ng-model="class.size" data-required="true">
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="location">Location</label>
+            <label class="control-label" for="location">地區</label>
             <div class="controls">
                 <select data-ng-model="class.location" data-required="true" >
                     <option value="" disabled>Please Choose</option>
-                    <option>---Hong Kong Island---</option>
-                    <option>Central and Western</option>
-                    <option>Wan Chai</option>
-                    <option>Eastern</option>
-                    <option>Southern</option>
-                    <option disabled>---Kowloon---</option>
-                    <option>Yau Tsim Mong</option>
-                    <option>Sham Shui Po</option>
-                    <option>Kowloon City</option>
-                    <option>Wong Tai Sin</option>
-                    <option>Kwun Tong</option>
-                    <option disabled>---New Territories---</option>
-                    <option>Kwai Tsing</option>
-                    <option>Tsuen Wan</option>
-                    <option>Tuen Mun</option>
-                    <option>Yuen Long</option>
-                    <option>North</option>
-                    <option>Tai Po</option>
-                    <option>Sha Tin</option>
-                    <option>Sai Kung</option>
-                    <option>Islands</option>
+                    <option disabled>---香港島---</option>
+                    <option>中西區</option>
+                    <option>灣仔</option>
+                    <option>東區</option>
+                    <option>南區</option>
+                    <option disabled>---九龍---</option>
+                    <option>油尖旺</option>
+                    <option>深水埗</option>
+                    <option>九龍城</option>
+                    <option>黃大仙</option>
+                    <option>觀塘</option>
+                    <option disabled>---新界---</option>
+                    <option>葵青</option>
+                    <option>荃灣</option>
+                    <option>屯門</option>
+                    <option>元朗</option>
+                    <option>北區</option>
+                    <option>大埔</option>
+                    <option>沙田</option>
+                    <option>西貢</option>
+                    <option>離島</option>
                 </select>
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="teachinghr">Teaching Duration</label>
+            <label class="control-label" for="teachinghr">課程時數</label>
             <div class="controls">
                 <select data-ng-model="class.duration" data-required="true">
                     <option value="" disabled>Please Choose</option>
@@ -134,8 +134,8 @@
         <br>
         <div class="control-group">
             <div class="controls">
-                <button type="submit" class="btn btn-primary" data-ng-click="submit(class)">Confirm</button>
-                <button type="button" class="btn">Cancel</button>
+                <button type="submit" class="btn btn-primary" data-ng-click="submit(class)">確定</button>
+                <a href="#/class"><button type="button" class="btn">取消</button></a>
             </div>
         </div>
         <br>

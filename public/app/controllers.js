@@ -210,7 +210,7 @@ function ClassPageCtrl($scope, $location) {
             if (currentUser) {
               if (currentUser.toJSON().objectId == person[0].toJSON().objectId) {
                 $('#registerbutton').addClass("disabled");
-                $('#registerbutton').html("You're the teacher!");
+                $('#registerbutton').html("你是導師!");
               }
             }
 
@@ -238,7 +238,7 @@ function ClassPageCtrl($scope, $location) {
 
     if ($.inArray($location.path().split('/')[2], omg) > -1) {
       $('#registerbutton').addClass("disabled");
-      $('#registerbutton').html("Registered");
+      $('#registerbutton').html("已註冊");
     }
 
   }

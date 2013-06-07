@@ -1,10 +1,10 @@
-<h2>Further Information</h2>
+<h2>更多資料</h2>
 
 <div class="row">
     <div class="col col-lg-8">
         <form id="register2-form" class="form-horizontal" data-validate="parsley">
             <div class="control-group">
-                <label class="control-label" for="inputCName">Chinese Name</label>
+                <label class="control-label" for="inputCName">中文姓名</label>
                 <div class="controls">
                     <input type="text" id="inputCName" placeholder="" data-ng-model="profile.chinesename" data-required="true">
                 </div>
@@ -16,13 +16,13 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputnum">Contact Number</label>
+                <label class="control-label" for="inputnum">聯絡電話</label>
                 <div class="controls">
                     <input type="text" id="inputnum" placeholder="" data-ng-model="profile.phone" data-required="true" >
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="age">Age Range</label>
+                <label class="control-label" for="age">年齡</label>
                 <div class="controls">
                     <select data-ng-model="profile.age" data-required="true">
                         <option value="" disabled>Please Choose</option>
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="edu">Highest level of Education</label>
+                <label class="control-label" for="edu">最高學歷</label>
                 <div class="controls">
                     <select data-ng-model="profile.education" data-required="true">
                         <option value="" disabled>Please Choose</option>
@@ -54,20 +54,20 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="interest">Interested in</label>
+                <label class="control-label" for="interest">興趣</label>
                 <div class="controls">
                     <label class="checkbox inline">
-                        <input type="checkbox" id="Checkbox_music" value="music" data-ng-model="profile.interest_music" data-group="asd">Music</label>
+                        <input type="checkbox" id="Checkbox_music" value="music" data-ng-model="profile.interest_music" data-group="asd">音樂</label>
                     <label class="checkbox inline">
-                        <input type="checkbox" id="Checkbox_sport" value="sport" data-ng-model="profile.interest_sport" data-group="asd" >Sport</label>
+                        <input type="checkbox" id="Checkbox_sport" value="sport" data-ng-model="profile.interest_sport" data-group="asd">運動</label>
                     <label class="checkbox inline">
-                        <input type="checkbox" id="Checkbox_language" value="language" data-ng-model="profile.interest_language" data-group="asd">Language</label>
+                        <input type="checkbox" id="Checkbox_language" value="language" data-ng-model="profile.interest_language" data-group="asd">語言</label>
                 </div>
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <button type="submit" class="btn btn-block btn-primary" data-ng-click="submit(profile)">Confirm</button>
-                    <button type="button" class="btn btn-block" data-ng-click="skip()">Skip</button>
+                    <button type="submit" class="btn btn-block btn-primary" data-ng-click="submit(profile)">確定</button>
+                    <button type="button" class="btn btn-block" data-ng-click="skip()">略過</button>
                 </div>
             </div>
             <br>

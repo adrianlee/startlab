@@ -5,7 +5,7 @@
   <div class="col col-lg-8">
     <div class="panel panel-primary">
       <!-- Default panel contents -->
-      <div class="panel-heading">Class Information</div>
+      <div class="panel-heading">課程資料</div>
       <p>{{class.introduction}}</p>
 
       <!-- List group -->
@@ -13,7 +13,7 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-2">
-              <strong>Capacity:</strong>
+              <strong>學生人數:</strong>
             </div>
             <div class="col col-lg-10">
               {{class.size}}
@@ -23,7 +23,7 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-2">
-              <strong>Duration:</strong>
+              <strong>課程時數:</strong>
             </div>
             <div class="col col-lg-10">
               {{class.duration}}
@@ -33,7 +33,7 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-2">
-              <strong>Category:</strong>
+              <strong>分類:</strong>
             </div>
             <div class="col col-lg-10">
               {{class.category}}
@@ -43,7 +43,7 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-2">
-              <strong>Created At:</strong>
+              <strong>建立於:</strong>
             </div>
             <div class="col col-lg-10">
               {{class.createdAt | date:'medium'}}
@@ -57,10 +57,10 @@
       </ul>
     </div>
 
-    <button id="registerbutton" class="btn btn-success btn-large btn-block" data-ng-click="register()">Register</button>
+    <button id="registerbutton" class="btn btn-success btn-large btn-block" data-ng-click="register()">註冊</button>
 
     <div class="page-header">
-      <h3>FAQ <small>answered by the instructor</small></h3>
+      <h3>常見問題 <small>answered by the instructor</small></h3>
 
       <blockquote>
         <p>Will your class include learning materials?</p>
@@ -75,13 +75,13 @@
   </div>
   <div class="col col-lg-4">
     <div class="panel panel-info">
-      <div class="panel-heading">Teacher Profile</div>
+      <div class="panel-heading">導師資料</div>
       <p><img height="100px" ng-src="{{profile_image}}"></img></p>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-5">
-              <strong>Name:</strong>
+              <strong>名稱:</strong>
             </div>
             <div class="col col-lg-7">
               {{teacher.name}}
@@ -91,7 +91,7 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-5">
-              <strong>Age:</strong>
+              <strong>年齡:</strong>
             </div>
             <div class="col col-lg-7">
               {{teacher.age}}
@@ -101,7 +101,7 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-5">
-              <strong>Member Since:</strong>
+              <strong>帳號建立於:</strong>
             </div>
             <div class="col col-lg-7">
               {{class.createdAt | date:'mediumDate'}}
@@ -111,9 +111,9 @@
       </ul>
     </div>
     <div class="panel panel-info">
-      <div class="panel-heading">Ask teacher question about this class</div>
+      <div class="panel-heading">問導師問題</div>
       <p><input type="text" class="" placeholder="Are there office hours after class?"></input></p>
-      <button class="btn btn-info btn-block">Submit Question</button>
+      <button class="btn btn-info btn-block">提交問題</button>
     </div>
 
   </div>

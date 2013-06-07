@@ -15,7 +15,7 @@
 
 <div class="page-header dash-header">
   <div ng-show="currentUser">
-    <h1>{{currentUser.name}}'s Classes <small>Dashboard</small></h1>
+    <h1>{{currentUser.name}}的課程 <small>Dashboard</small></h1>
   </div>
 </div>
 
@@ -41,8 +41,8 @@
   <button type="button" class="btn btn-primary btn-warning">Create a Class</button>
  -->
   <ul class="nav nav-pills nav-stacked">
-    <li class="active"><a href="#/class">Classes</a></li>
-    <li><a href="#/profile">Account & Profile</a></li>
+    <li class="active"><a href="#/class">課 程</a></li>
+    <li><a href="#/profile">帳號設定</a></li>
   </ul>
   </div>
   <div class="col col-lg-9">
@@ -61,16 +61,17 @@
         <p class="list-group-item-text">Early stage disruptive ecosystem community outreach dynamic location based strategic investor. </p>
       </a>
       -->
-      <h2>Classes I Teach</h2>
-      <p ng-hide="classes2" class="lead">You have not created any classes</p>
+      <h2>我開辦的課程</h2>
+      <p ng-hide="classes2">你暫時沒有開辦課程</p>
       <div ng-repeat="class in classes | orderBy:'createdAt':true | filter: search"  >
         <a href="#/class/{{class.objectId}}" class="list-group-item">
           <h4 class="list-group-item-heading">{{class.name}}</h4>
           <p class="list-group-item-text">{{class.introduction}}</p>
         </a>
       </div>
-      <h2>My Registered Classes</h2>
-      <p ng-hide="classes2" class="lead">You are not registered in any classes</p>
+      <br>
+      <h2>已註冊的課程</h2>
+      <p ng-hide="classes2">你暫時沒有註冊課程</p>
       <div ng-repeat="class in classes2 | orderBy:'createdAt':true | filter: search"  >
         <a href="#/class/{{class.objectId}}" class="list-group-item">
           <h4 class="list-group-item-heading">{{class.name}}</h4>
