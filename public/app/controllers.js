@@ -184,13 +184,23 @@ function ClassCreateCtrl($scope, $rootScope, $location) {
 
   console.log(currentUser);
 
-  if (!currentUser.toJSON().register2) {
-    $location.path('/register2');
+  if (!currentUser) {
+    $location.path('/login');
 
     if(!$scope.$$phase) {
       $scope.$digest();
       $rootScope.$digest();
     }
+  } else {
+    if (!currentUser.toJSON().register2) {
+      $location.path('/register2');
+
+      if(!$scope.$$phase) {
+        $scope.$digest();
+        $rootScope.$digest();
+      }
+    }
+
   }
 
   console.log("Class Create");
