@@ -183,6 +183,7 @@ function ClassPageCtrl($scope, $location) {
   console.log("Class Page");
   // mixpanel.track("Teach");
 
+  var currentUser = Parse.User.current();
   var this_class;
 
   var Classes = Parse.Object.extend("Classes");
@@ -228,9 +229,6 @@ function ClassPageCtrl($scope, $location) {
       console.log(error);
     }
   });
-
-  var currentUser = Parse.User.current();
-
 
   var omg = currentUser.toJSON().registered;
 
