@@ -61,7 +61,15 @@
         <p class="list-group-item-text">Early stage disruptive ecosystem community outreach dynamic location based strategic investor. </p>
       </a>
       -->
+      <h2>Classes I Teach</h2>
       <div ng-repeat="class in classes | orderBy:'createdAt':true | filter: search"  >
+        <a href="#/class/{{class.objectId}}" class="list-group-item">
+          <h4 class="list-group-item-heading">{{class.name}}</h4>
+          <p class="list-group-item-text">{{class.introduction}}</p>
+        </a>
+      </div>
+      <h2>My Registered Classes</h2>
+      <div ng-repeat="class in classes2 | orderBy:'createdAt':true | filter: search"  >
         <a href="#/class/{{class.objectId}}" class="list-group-item">
           <h4 class="list-group-item-heading">{{class.name}}</h4>
           <p class="list-group-item-text">{{class.introduction}}</p>

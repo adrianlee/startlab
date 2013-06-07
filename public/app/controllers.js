@@ -146,6 +146,35 @@ function ClassCtrl($scope, $location) {
       alert("Error: " + error.code + " " + error.message);
     }
   });
+
+  var query2 = new Parse.Query(Classes);
+
+  console.log("asd");
+  console.log(currentUser.toJSON().registered);
+
+  query2.containedIn("objectId", currentUser.toJSON().registered);
+
+  query2.find({
+    success: function(results) {
+      console.log("Successfully retrieved " + results.length + " courses.");
+
+      $('#learn_count').html(results.length);
+
+      var jsonArray = [];
+
+      for (var i = 0; i < results.length; i++) {
+        console.log(results[i]);
+        jsonArray.push(results[i].toJSON());
+      }
+
+      $scope.classes2 = jsonArray;
+
+      $scope.$digest();
+    },
+    error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+    }
+  });
 }
 
 ClassCtrl.$inject = ['$scope', '$location'];
@@ -153,6 +182,8 @@ ClassCtrl.$inject = ['$scope', '$location'];
 function ClassPageCtrl($scope, $location) {
   console.log("Class Page");
   // mixpanel.track("Teach");
+
+  var this_class;
 
   var Classes = Parse.Object.extend("Classes");
   var query = new Parse.Query(Classes);
@@ -165,6 +196,7 @@ function ClassPageCtrl($scope, $location) {
     success: function (result) {
       console.log(result);
       $scope.class = result[0].toJSON();
+      this_class = result[0].toJSON();
 
       if ($scope.class) {
         var query = new Parse.Query(Parse.User);
@@ -173,6 +205,11 @@ function ClassPageCtrl($scope, $location) {
           success: function(person) {
             console.log(person[0].toJSON());
             $scope.teacher = person[0].toJSON();
+
+            if (currentUser.toJSON().objectId == person[0].toJSON().objectId) {
+              $('#registerbutton').addClass("disabled");
+              $('#registerbutton').html("You're the teacher!");
+            }
 
             $scope.profile_image = "http://www.gravatar.com/avatar/" + md5(person[0].toJSON().email.toLowerCase().trim()) + "?d=mm";
 
@@ -192,8 +229,21 @@ function ClassPageCtrl($scope, $location) {
     }
   });
 
+  var currentUser = Parse.User.current();
+
+  console.log("omg");
+  console.log();
+
+  if (currentUser.toJSON().registered.indexOf("Qe7A84mA31") > -1) {
+    $('#registerbutton').addClass("disabled");
+    $('#registerbutton').html("Registered");
+  }
+
+
   $scope.register = function () {
     var sure = confirm("Please confirm registration.");
+
+    console.log(sure);
 
     if (sure) {
       $('#registerbutton').addClass("disabled");
@@ -201,7 +251,24 @@ function ClassPageCtrl($scope, $location) {
 
       var currentUser = Parse.User.current();
 
-      currentUser.toJSON().registered
+      var omg = currentUser.toJSON().registered;
+      omg.push($location.path().split('/')[2]);
+      console.log(omg);
+
+      if (currentUser.toJSON().registered) {
+        currentUser.set("registered", omg);
+      } else {
+        currentUser.set("registered", [$location.path().split('/')[2]]);
+      }
+
+      currentUser.save(null, {
+        success: function (user) {
+          console.log(user);
+        },
+        error: function (user, error) {
+          console.log(error);
+        }
+      })
 
     }
   }
