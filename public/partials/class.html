@@ -47,6 +47,7 @@
   </div>
   <div class="col col-lg-9">
     <div class="list-group">
+      <!--
       <a href="#" class="list-group-item">
         <h4 class="list-group-item-heading">Conversational English</h4>
         <p class="list-group-item-text">Lorem lean startup ipsum product market fit customer development acquihire technical cofounder.</p>
@@ -59,8 +60,9 @@
         <h4 class="list-group-item-heading">Fostering Hong Kong startups & ecosystem</h4>
         <p class="list-group-item-text">Early stage disruptive ecosystem community outreach dynamic location based strategic investor. </p>
       </a>
+      -->
       <div ng-repeat="class in classes | orderBy:'createdAt':true | filter: search"  >
-        <a href="#" class="list-group-item">
+        <a href="#/class/{{class.objectId}}" class="list-group-item">
           <h4 class="list-group-item-heading">{{class.name}}</h4>
           <p class="list-group-item-text">{{class.introduction}}</p>
         </a>

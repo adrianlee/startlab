@@ -13,6 +13,7 @@ function MainCtrl($scope, $rootScope, $location) {
   $rootScope.$on('login', function() {
     $scope.isLoggedIn = true;
     $rootScope.currentUser = Parse.User.current();
+    $scope.currentUser = Parse.User.current();
     $rootScope.name = Parse.User.current().toJSON().name;
     $scope.$digest();
     $rootScope.$digest();
@@ -163,7 +164,7 @@ function ClassPageCtrl($scope, $location) {
   query.find({
     success: function (result) {
       console.log(result);
-      $scope.class = result[0].toJSON() ;
+      $scope.class = result[0].toJSON();
 
       if(!$scope.$$phase) {
         $scope.$digest();
