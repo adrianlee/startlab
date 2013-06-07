@@ -109,7 +109,7 @@
             <li><a href="#/teach">Teach</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
-            <li data-ng-show="isLoggedIn"><a href="#/class">{{currentUser.name}}'s Classes</a></li>
+            <li data-ng-show="isLoggedIn"><a href="#/class">My Classes</a></li>
             <li data-ng-show="isLoggedIn"><a data-ng-click="logout()">Logout</a></li>
             <li data-ng-hide="isLoggedIn"><a href="#/login">Login</a></li>
             <li data-ng-hide="isLoggedIn"><a href="#/register">Register</a></li>
@@ -141,9 +141,11 @@
   </div>
 
     <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/parsley/i18n/messages.zh_cn.js"></script>
     <script src="/assets/js/parsley/parsley.js"></script>
     <script src="/assets/js/swipe/swipe.js"></script>
-    <script src="/assets/js/jquery.masonry.min.js"></script>
+    <script src="/assets/js/wysihtml5/parser_rules/advanced.js"></script>
+    <script src="/assets/js/wysihtml5/dist/wysihtml5-0.3.0.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
 
     <!--

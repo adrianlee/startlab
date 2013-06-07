@@ -1,3 +1,5 @@
+<h3>Please Login</h3>
+<br>
 <div class="row">
   <div class="col col-lg-5">
     <form id="login-form" class="form-horizontal" data-validate="parsley">
@@ -10,7 +12,7 @@
       <div class="row">
         <label for="" class="col col-lg-2 control-label">Password</label>
         <div class="col col-lg-10">
-          <input type="password" id="inputPassword" placeholder="Password" data-ng-model="user.password">
+          <input type="password" id="inputPassword" placeholder="Password" data-ng-model="user.password" data-required="true" data-minlength="6">
           <br>
         </div>
         <div class="col col-lg-10 col-offset-2">

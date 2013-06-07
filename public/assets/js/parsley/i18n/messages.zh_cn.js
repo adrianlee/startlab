@@ -20,7 +20,7 @@ window.ParsleyConfig = window.ParsleyConfig || {};
         }
       , notnull:        "字段值不可为null"
       , notblank:       "字段值不可为空"
-      , required:       "字段值是必填的"
+      , required:       "必填"
       , regexp:         "字段值不合法"
       , min:            "字段值应该大于 %s"
       , max:            "字段值应该小于 %s."

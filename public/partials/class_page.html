@@ -13,6 +13,16 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-2">
+              <strong>Capacity:</strong>
+            </div>
+            <div class="col col-lg-10">
+              {{class.size}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col col-lg-2">
               <strong>Duration:</strong>
             </div>
             <div class="col col-lg-10">
@@ -23,20 +33,20 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-2">
-              <strong>Created At:</strong>
+              <strong>Category:</strong>
             </div>
             <div class="col col-lg-10">
-              {{class.createdAt | date:'medium'}}
+              {{class.category}}
             </div>
           </div>
         </li>
         <li class="list-group-item">
           <div class="row">
             <div class="col col-lg-2">
-              <strong>Category:</strong>
+              <strong>Created At:</strong>
             </div>
             <div class="col col-lg-10">
-              {{class.category}}
+              {{class.createdAt | date:'medium'}}
             </div>
           </div>
         </li>

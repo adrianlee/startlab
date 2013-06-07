@@ -4,7 +4,7 @@
       <div class="row">
         <label for="inputName" class="col col-lg-2 control-label">Name</label>
         <div class="col col-lg-10">
-          <input type="text" id="inputName" placeholder="Name" data-ng-model="user.name">
+          <input type="text" id="inputName" placeholder="Name" data-ng-model="user.name" data-required="true">
         </div>
       </div>
       <div class="row">
@@ -16,7 +16,7 @@
       <div class="row">
         <label for="" class="col col-lg-2 control-label">Password</label>
         <div class="col col-lg-10">
-          <input type="password" id="inputPassword" placeholder="Password" data-ng-model="user.password">
+          <input type="password" id="inputPassword" placeholder="Password" data-ng-model="user.password" data-required="true" data-minlength="6">
           <br>
         </div>
         <div class="col col-lg-10 col-offset-2">

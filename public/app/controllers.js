@@ -175,6 +175,13 @@ function ClassPageCtrl($scope, $location) {
     }
   });
 
+  $scope.register = function () {
+    var sure = confirm("Please confirm registration.");
+
+    if (sure) {
+      alert("yay!");
+    }
+  }
 }
 ClassPageCtrl.$inject = ['$scope', '$location'];
 
@@ -207,6 +214,10 @@ function ClassCreateCtrl($scope, $rootScope, $location) {
   // mixpanel.track("Class Create");
 
   $scope.submit = function (newClass) {
+    if (!$('#class_form').parsley('validate')) {
+      return null;
+    }
+
     var Classes = Parse.Object.extend("Classes");
     var classes = new Classes();
 
@@ -240,6 +251,10 @@ function LoginCtrl($scope, $rootScope, $location) {
   // mixpanel.track("Login");
 
   $scope.submit = function (login_user) {
+    if (!$('#login-form').parsley('validate')) {
+      return null;
+    }
+
     console.log("submitted stuff");
     console.log(login_user);
 
@@ -274,6 +289,10 @@ function RegisterCtrl($scope, $rootScope, $location) {
   // mixpanel.track("Login");
 
   $scope.submit = function (newUser) {
+    if (!$('#register-form').parsley('validate')) {
+      return null;
+    }
+
     console.log("submitted stuff");
     console.log(newUser);
 
@@ -307,6 +326,10 @@ RegisterCtrl.$inject = ['$scope', '$rootScope', '$location'];
 
 function Register2Ctrl($scope, $rootScope, $location) {
   $scope.submit = function (profile) {
+    if (!$('#register2-form').parsley('validate')) {
+      return null;
+    }
+
     console.log(profile)
 
     var user = Parse.User.current();
@@ -320,7 +343,6 @@ function Register2Ctrl($scope, $rootScope, $location) {
 
     user.save(null, {
       success: function () {
-        alert("yaya");
         $location.path('/class/create');
 
         if(!$scope.$$phase) {
@@ -328,8 +350,8 @@ function Register2Ctrl($scope, $rootScope, $location) {
           $rootScope.$digest();
         }
       },
-      error: function () {
-        alert("error")
+      error: function (obj, error) {
+        alert(JSON.stringify(error));
       }
     })
   }
