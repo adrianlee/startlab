@@ -255,7 +255,7 @@ function ClassPageCtrl($scope, $location) {
         $rootScope.$digest();
       }
 
-      return
+      return;
     }
 
 
@@ -389,6 +389,20 @@ function LoginCtrl($scope, $rootScope, $location) {
         // The login failed. Check error to see why.
         console.log(JSON.stringify(error));
         alert("Wrong username or password");
+      }
+    });
+  }
+
+  $scope.forgot = function (email) {
+    console.log(email);
+    Parse.User.requestPasswordReset(email.email, {
+      success: function() {
+        // Password reset request was sent successfully
+        alert("Password reset. Check your email.")
+      },
+      error: function(error) {
+        // Show the error message somewhere
+        alert("Error: " + error.code + " " + error.message);
       }
     });
   }
