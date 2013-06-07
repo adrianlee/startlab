@@ -231,10 +231,13 @@ function ClassPageCtrl($scope, $location) {
 
   var currentUser = Parse.User.current();
 
-  console.log("omg");
-  console.log();
 
-  if (currentUser.toJSON().registered.indexOf("Qe7A84mA31") > -1) {
+  var omg = currentUser.toJSON().registered;
+
+  console.log(omg);
+  console.log(omg.indexOf("Qe7A84mA31"));
+
+  if (omg.indexOf("Qe7A84mA31") > -1) {
     $('#registerbutton').addClass("disabled");
     $('#registerbutton').html("Registered");
   }
