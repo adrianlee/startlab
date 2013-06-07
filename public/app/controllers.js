@@ -250,6 +250,10 @@ function ClassPageCtrl($scope, $location) {
       var currentUser = Parse.User.current();
 
       var omg = currentUser.toJSON().registered;
+
+      if (!omg) {
+        omg = [];
+      }
       omg.push($location.path().split('/')[2]);
       console.log(omg);
 
