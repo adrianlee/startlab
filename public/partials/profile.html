@@ -1,10 +1,40 @@
-<ul class="list-unstyled">
-  <li class="lead"><b>English:</b> {{currentUser.englishname}}</li>
-  <li class="lead"><b>Chinese:</b> {{currentUser.chinesename}}</li>
-  <li class="lead"><b>Email:</b> {{currentUser.email}}</li>
-  <li class="lead"><b>Age:</b> {{currentUser.age}}</li>
-  <li class="lead"><b>Education:</b> {{currentUser.education}}</li>
-  <li class="lead"><b>Contact Number:</b> {{currentUser.phone}}</li>
-  <li class="lead"><b>ID:</b> {{currentUser.objectId}}</li>
-  <li class="lead"><b>Member</b> Since: {{currentUser.createdAt | date:'mediumDate'}}</li>
-</ul>
+<div class="page-header dash-header">
+  <div ng-show="currentUser">
+    <h1>{{currentUser.name}}的課程 <small>Dashboard</small></h1>
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col col-lg-3">
+
+  <ul class="nav nav-pills nav-stacked">
+    <li><a href="#/class">課 程</a></li>
+    <li class="active"><a href="#/profile">帳號設定</a></li>
+  </ul>
+  </div>
+  <div class="col col-lg-9">
+    <ul class="list-unstyled">
+      <li class="lead"><b>English:</b> {{currentUser.englishname}}</li>
+      <li class="lead"><b>Chinese:</b> {{currentUser.chinesename}}</li>
+      <li class="lead"><b>Email:</b> {{currentUser.email}}</li>
+      <li class="lead"><b>Age:</b> {{currentUser.age}}</li>
+      <li class="lead"><b>Education:</b> {{currentUser.education}}</li>
+      <li class="lead"><b>Contact Number:</b> {{currentUser.phone}}</li>
+      <li class="lead"><b>ID:</b> {{currentUser.objectId}}</li>
+      <li class="lead"><b>Member</b> Since: {{currentUser.createdAt | date:'mediumDate'}}</li>
+    </ul>
+
+  </div>
+</div>
+
+<!-- linkedin style for ask for more info -->
+<!--
+<div class="panel">
+  <div class="panel-heading">Panel heading</div>
+  Panel content
+  <div class="progress">
+    <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+  </div>
+</div>
+-->
